@@ -1,7 +1,7 @@
 function ZingReaderViewModel($scope) {
     var regEx = /param.*xmlURL=(.*)&amp/g;
     var yql_url = 'https://query.yahooapis.com/v1/public/yql';
-
+    var test;
     $scope.submitUrl = function () {
         $.ajax({
             'url': yql_url,
