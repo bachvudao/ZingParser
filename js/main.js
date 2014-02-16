@@ -130,6 +130,7 @@ function ZingReaderViewModel($scope) {
             var options = {
               swfPath: "/",
               supplied: "mp3",
+              loop: true,
               playlistOptions: {
                 autoPlay: true,
                 loopOnPrevious: false,
