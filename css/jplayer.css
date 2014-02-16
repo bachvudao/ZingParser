@@ -86,7 +86,7 @@
 ----------------------------------------------- */
 .jp-controls {
   float: left;
-  width: 30px;
+  width: 60px;
   height: 30px;
   list-style-type: none;
   padding: 0;
@@ -97,7 +97,7 @@
   content: " ";
   position: absolute;
   top: 0;
-  left: 30px;
+  left: 60px;
   width: 0;
   height: 30px;
   border-left: 1px solid #242526;
@@ -111,6 +111,8 @@
   overflow: hidden;
   text-indent: -9999px;
 }
+.jp-previous,
+.jp-next,
 .jp-play,
 .jp-pause,
 .jp-mute,
@@ -122,16 +124,40 @@
   background-position: 10px center;
   background-repeat: no-repeat;
 }
+
+.jp-play,
+.jp-pause{
+  margin-left: 16px;  
+}
+
+.jp-next{
+  margin-left: 30px;
+}
+
+.jp-previous:hover,
+.jp-next:holver,
 .jp-play:hover,
 .jp-pause:hover,
 .jp-mute:hover,
 .jp-unmute:hover {
   background-position: -23px center;
 }
+
 .jp-play {
   background-image: url('../images/play.png');
 }
+
+.jp-next {
+  background-image: url('../images/next.png');
+}
+
+.jp-previous {
+  background-image: url('../images/prev.png');
+}
+
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  .jp-previous,
+  .jp-next,
   .jp-play {
     background-image: url('../images/play@2x.png');
     background-size: auto auto;
