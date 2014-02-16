@@ -145,6 +145,16 @@ function ZingReaderViewModel($scope) {
 
             var myPlaylistControl = new jPlayerPlaylist(cssSelector, myPlaylist, options);
 
+            $("#jquery_jplayer_1").bind($.jPlayer.event.play, function () {
+              var current = myPlaylistControl.current,
+                playlist = myPlaylistControl.playlist;
+              jQuery.each(playlist, function (index, obj) {
+                if (index == current) {
+                  $("#jp-current-song-text").html(obj.title);
+                } // if condition end
+              });
+            });
+
             var data = response.query.results.item;
             for (var i = 0; i < data.length; i++) {
               myPlaylistControl.add({

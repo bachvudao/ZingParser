@@ -210,6 +210,17 @@
   width: 100%;
   height: 1px;
 }
+
+.jp-current-song{
+  position: absolute;
+  padding: 0px 95px 0 75px;
+  margin-top: 3px;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
 .jp-seek-bar,
 .jp-play-bar {
   width: 0px;
@@ -340,6 +351,7 @@
 /* PLAYLIST
 ----------------------------------------------- */
 .jp-playlist {
+  display: none;
   width: 95%;
   margin: 0 auto;
   font-size: 13px;
