@@ -151,7 +151,7 @@ function ZingReaderViewModel($scope) {
               jQuery.each(playlist, function (index, song) {
                 if (index == current) {
                   //$("#jp-current-song-text").html(obj.title);
-                  var displayText = song.title;
+                  var displayText = song.title + " by " + song.artist;
                   if(displayText.length > 21){
                     displayText = displayText.substring(0,21) + "...";
                   }
