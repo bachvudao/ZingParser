@@ -148,9 +148,15 @@ function ZingReaderViewModel($scope) {
             $("#jquery_jplayer_1").bind($.jPlayer.event.play, function () {
               var current = myPlaylistControl.current,
                 playlist = myPlaylistControl.playlist;
-              jQuery.each(playlist, function (index, obj) {
+              jQuery.each(playlist, function (index, song) {
                 if (index == current) {
-                  $("#jp-current-song-text").html(obj.title);
+                  //$("#jp-current-song-text").html(obj.title);
+                  var displayText = song.title;
+                  if(displayText.length > 21){
+                    displayText = displayText.substring(0,21) + "...";
+                  }
+                  
+                  $("#jp-current-song-text").html(displayText);
                 } // if condition end
               });
             });
