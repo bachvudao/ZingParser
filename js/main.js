@@ -3,10 +3,17 @@ function ZingReaderViewModel($scope) {
   var yql_url = 'https://query.yahooapis.com/v1/public/yql';
 
   $scope.submitUrl = function () {
+    
+    // sometimes if the url does not contain the st song, the html will not be in the rigt form. Add it regardless
+    var amendedZingUrl = $scope.zingUrl;
+    if(amendedZingUrl.indexOf("zing") != -1 && amendedZingUrl.indexOf("?st") == -1){
+      amendedZingUrl = amendedZingUrl + "?st=1";
+    }
+    
     $.ajax({
       'url': yql_url,
       'data': {
-        'q': 'SELECT * FROM html WHERE url="' + $scope.zingUrl + '" and xpath="//div/script"',
+        'q': 'SELECT * FROM html WHERE url="' + amendedZingUrl + '" and xpath="//div/script"',
         'format': 'json',
         'jsonCompat': 'new',
       },
@@ -90,7 +97,7 @@ function ZingReaderViewModel($scope) {
                 artist: data[i].performer,
               });
               
-              myPlaylistControl.play(0);
+              myPlaylistControl.play(0);    
             }
 
           },
