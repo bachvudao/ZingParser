@@ -89,6 +89,8 @@ function ZingReaderViewModel($scope) {
                 mp3: data[i].source,
                 artist: data[i].performer,
               });
+              
+              myPlaylistControl.play(0);
             }
 
           },
