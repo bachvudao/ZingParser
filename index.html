@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css\jplayer.css" />
   </head>
 
-  <body>
+  <body ng-controller="ZingReaderViewModel" ng-keypress="handleKeyStroke($event)">
 
     <div class="site-wrapper">
 
@@ -39,7 +39,7 @@
             </div>
           </div>
 
-          <div class="inner cover" ng-controller="ZingReaderViewModel">
+          <div class="inner cover">
             <h1 class="cover-heading">Your Zing Playlist URL</h1>
 
               <form class="url-entry" role="form"
